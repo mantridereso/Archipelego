@@ -1,0 +1,34 @@
+archipelago_topic_user_ingame_world:
+    channel: archipelago/user/{user}/ingame/world/{world}/{event}
+    handler:
+        callback: 'archipelago.topic' #related to the getName() of your topic
+    requirements:
+        user:
+            pattern: "[a-z]+"
+        event:
+            pattern: "origin|end"
+        world:
+            pattern: "[a-z]+"
+
+
+archipelago_topic_user_ingame_world_shipping_ships:
+    channel: archipelago/user/{user}/ingame/world/{world}/shipping/ships
+    handler:
+        callback: 'archipelago_shipping.topic'
+    requirements:
+        user:
+            pattern: "[a-z]+"
+        world:
+            pattern: "[a-z]+"
+
+archipelago_topic_user_ingame_world_shipping_ship:
+    channel: archipelago/user/{user}/ingame/world/{world}/shipping/ship/{shipname}
+    handler:
+        callback: 'archipelago_shipping.topic'
+    requirements:
+        user:
+            pattern: "[a-z]+"
+        world:
+            pattern: "[a-z]+"
+        shipname:
+            pattern: "[a-zA-Z]+"

@@ -1,0 +1,3 @@
+svbcbs_shipping_world_homepage:
+    path:     /archipelago
+    defaults: { _controller: SVBCBSShippingWorldBundle:Default:archipelago }

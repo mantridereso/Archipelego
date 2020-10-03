@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>SVB Archipelago</title>
+
+    <script src="{{ asset('js/lib/jquery-1.11.3.min.js') }}"></script>
+    <script src="{{ asset('js/lib/random.min.js') }}"></script>
+
+    <script src="{{ asset('js/lib/quintus-all.js') }}"></script>
+    <script src="{{ asset('js/lib/pathfinding-browser.js') }}"></script>
+
+    <script src="{{ asset('js/archipelago/gauss_random.js') }}"></script>
+    <script src="{{ asset('js/archipelago/surface_generator.js') }}"></script>
+    <script src="{{ asset('js/archipelago/brownian_island.js') }}"></script>
+    <script src="{{ asset('js/archipelago/archipelago.js') }}"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(
+
+                function(){
+
+                    Archipelago(Quintus({}).include("Sprites, Anim, Scenes, Input, 2D, Touch, UI")).run();
+
+                }
+        );
+
+    </script>
+
+</head>
+<body style="background: #ffffff;">
+
+
+<canvas width="1024" height="768" id="archipelago_canvas"></canvas>
+
+
+{{ ws_client() }}
+</body>
+</html>

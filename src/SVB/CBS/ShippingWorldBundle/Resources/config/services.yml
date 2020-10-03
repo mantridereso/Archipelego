@@ -1,0 +1,15 @@
+services:
+#    svbcbs_shipping_world.example:
+#        class: SVB\CBS\ShippingWorldBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+  archipelago.topic_service:
+          class: SVB\CBS\ShippingWorldBundle\Topic\ArchipelagoTopic
+          arguments: [@neo4j.manager]
+          tags:
+              - { name: gos_web_socket.topic }
+
+  archipelago_shipping.topic_service:
+          class: SVB\CBS\ShippingWorldBundle\Topic\ArchipelagoShippingTopic
+          arguments: [@neo4j.manager]
+          tags:
+              - { name: gos_web_socket.topic }
